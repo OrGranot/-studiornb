@@ -11,13 +11,14 @@ Studio.destroy_all
 
 puts "Creating studios"
 30.times do
-  Studio.new(
+
+studio = Studio.new(
     name: Faker::Name.name,
     size: Faker::Number.decimal_part(digits: 2),
     equipment: Faker::Appliance.equipment,
     location: Faker::Nation.capital_city,
     description: Faker::Lorem.paragraph(sentence_count: 4),
   )
-  Studio.user = User.last.id
-  Studio.save!
+  studio.user = User.last
+  studio.save!
 end
