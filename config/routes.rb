@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   get "studios/index", to: "studios#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  get '/studios/:id', to: 'studios#show'
+  get '/studios/:id', to: 'studios#show', as: :studio
 end
