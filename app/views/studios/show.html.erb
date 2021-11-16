@@ -1,5 +1,7 @@
 <h1><%= @studio.name %></h1>
-
+<br>
+<%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill %>
+<br>
 <p>DETAILS:
 <%= @studio.description %>
 </p>
