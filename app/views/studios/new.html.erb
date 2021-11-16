@@ -1,19 +1,8 @@
-
-<%= form_for(@studio) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.label :size %>
-  <%= f.number_field :size %>
-
-  <%= f.label :equipment %>
-  <%= f.text_field :equipment %>
-
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-
-  <%= f.submit %>
+<%= simple_form_for @studio do |f| %>
+  <%= f.input :name %>
+  <%= f.input :size %>
+  <%= f.input :equipment %>
+  <%= f.input :location %>
+  <%= f.input :description %>
+  <%= f.button :submit %>
 <% end %>

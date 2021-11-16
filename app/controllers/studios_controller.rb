@@ -5,6 +5,11 @@ class StudiosController < ApplicationController
 
   def new
     @studio = Studio.new
+  end
+
+  def create
+    @studio = Studio.new(studio_params)
+    @studio.user = current_user
     if @studio.save
       redirect_to studio_path(@studio)
     else
@@ -12,9 +17,8 @@ class StudiosController < ApplicationController
     end
   end
 
-  def create
-    @studio = Studio.new(studio_params)
-    @studio.save
+  def show
+    @studio = Studio.find(params[:id])
   end
 
   private
