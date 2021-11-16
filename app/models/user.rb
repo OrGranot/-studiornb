@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  has_many :studios
-  has_many :reservations, through: :studios
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
