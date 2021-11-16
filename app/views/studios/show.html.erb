@@ -17,4 +17,14 @@ LOCATION: <%= @studio.location %>
 </p>
 <br>
 <%= link_to "Go to all studios", root_path %>
-
+<br>
+<br>
+<%= simple_form_for([@studio, @reservation]) do |f| %>
+  <p>Start date:</p>
+  <%= f.date_select :start_on %>
+  <br>
+  <p>End date:</p>
+  <%= f.date_select :end_on %>
+  <br>
+  <%= f.submit %>
+<% end %>
