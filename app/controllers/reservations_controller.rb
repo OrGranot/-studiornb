@@ -1,4 +1,7 @@
 class ReservationsController < ApplicationController
+  def index
+    @reservations = Reservation.where(studio: params[:studio_id])
+  end
 
   def create
     @reservation = Reservation.new(reservation_params)
