@@ -22,6 +22,22 @@ class StudiosController < ApplicationController
     @reservation = Reservation.new
   end
 
+  def edit
+    @studio = Studio.find(params[:id])
+  end
+
+  def update
+    @studio = Studio.find(params[:id])
+    @studio.update(studio_params)
+    redirect_to studio_path(@studio)
+  end
+
+  def destroy
+    @studio = Studio.find(params[:id])
+    @studio.destroy
+    redirect_to studios_path
+  end
+
   private
 
   def studio_params

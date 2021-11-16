@@ -30,4 +30,11 @@ LOCATION: <%= @studio.location %>
   <%= f.date_select :end_on %>
   <br>
   <%= f.submit %>
+</p>
+<br>
+<p>
+<%= link_to 'Edit the data', edit_studio_path %>
+<br>
+<%= link_to "Delete Studio", studio_path(@studio), method: :delete, data: {confirm: "Are you sure?"} %>
+
 <% end %>
