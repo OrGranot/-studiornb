@@ -1,0 +1,10 @@
+<h1>My reservations</h1>
+
+<% @reservations.each do |reservation| %>
+<div class="card">
+<h3> Reservation in: <%= reservation.studio.name %></h3>
+<h4>STARTING ON: <%= reservation.start_on%></h4>
+<p>FINISIHING ON: <%= reservation.end_on %></p>
+<p>CONFIRMED? <%= reservation.aprroved %></p>
+</div>
+<% end %>
