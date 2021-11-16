@@ -18,6 +18,7 @@ LOCATION: <%= @studio.location %>
 <br>
 <%= link_to "Go to all studios", root_path %>
 <br>
+<%= link_to 'See all reservations of this studio', studio_reservations_path(@studio) %>
 <br>
 <%= simple_form_for([@studio, @reservation]) do |f| %>
   <p>Start date:</p>
