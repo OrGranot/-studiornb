@@ -1,5 +1,11 @@
 <h1><%= @studio.name %></h1>
-
+<br>
+  <% if @studio.photo.attached? %>
+    <%= cl_image_tag @studio.photo.key, height: 150, width: 200, crop: :fill %>
+  <% else %>
+    <p>no image available</p>
+  <% end %>
+<br>
 <p>DETAILS:
 <%= @studio.description %>
 </p>
