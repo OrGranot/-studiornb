@@ -1,6 +1,8 @@
 class StudiosController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
-    @studios = Studio.all
+    @studios = policy_scope(Studio)
   end
 
   def new
@@ -18,6 +20,7 @@ class StudiosController < ApplicationController
   end
 
   def show
+
     @studio = Studio.find(params[:id])
     @reservation = Reservation.new
   end
