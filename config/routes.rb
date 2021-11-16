@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :studios do
     resources :reservations
   end
+  get "dashboards", to: "dashboards#show"
 end
