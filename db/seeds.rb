@@ -27,7 +27,7 @@ puts "Creating reservations"
   reservation = Reservation.new(
     start_on: Faker::Date.in_date_period,
     end_on: Faker::Date.in_date_period,
-    aprroved: true
+    approved: true
   )
   reservation.studio = Studio.last
   reservation.user = User.last
