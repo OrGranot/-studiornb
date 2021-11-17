@@ -14,9 +14,15 @@
 @import "components/index";
 @import "components/card-product";
 @import "components/card-grid";
+@import "components/button";
 @import "pages/index";
 @import "studios/index";
+@import "studios/new";
 @import "components/card";
 @import "components/container";
 @import "components/index-container-headline";
 @import "components/footer";
+
+.container {
+  min-height: 60vh;
+}

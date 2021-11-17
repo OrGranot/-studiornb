@@ -1,0 +1,21 @@
+.wrapper {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.inline-input {
+  justify-content: space-between;
+}
+
+.form-actions {
+  align-items: center;
+  justify-content: space-between ;
+
+  & > * {
+    margin: 0;
+  }
+
+  .button {
+    height: fit-content;
+  }
+}
