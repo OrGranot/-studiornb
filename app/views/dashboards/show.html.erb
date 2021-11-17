@@ -2,22 +2,24 @@
 <br>
 <h4>Your Reservations:</h4>
 <br>
-<% @reservations.each do |reservation| %>
-  Studio:
-  <%= reservation.studio.name %>
-<br>
-  Starts on:
-  <%= reservation.start_on %>
-<br>
-  Ends on:
-  <%= reservation.end_on %>
-<br>
-  Approved:
-    <% if reservation.approved %>
-  Yes
-    <% else %>
-  Pending
+
+<div class="card-grid">
+  <% @reservations.each do |reservation| %>
+    <div class="card-product">
+      <div class="card-product-infos">
+        <div class="card-info-header d-flex align-items-center">
+          <h2 class="mr-2"><%= reservation.studio.name %></h2>
+          <p>at <%= reservation.studio.location %></p>
+        </div>
+        <p><%= reservation.start_on.to_formatted_s(:long_ordinal) %> to <%= reservation.end_on.to_formatted_s(:long_ordinal) %></p>
+        <p>Status:
+          <% if reservation.approved %>
+            <span class="approved">Approved</span>
+          <% else %>
+            <span class="panding">Pending</span>
+          <% end %>
+        </p>
+      </div>
+    </div>
   <% end %>
-  <br>
-  <br>
-<% end %>
+</div>
