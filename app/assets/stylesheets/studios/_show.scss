@@ -1,0 +1,123 @@
+.show {
+  color: #F5F5F5;
+  background-color: #F5F5F5;
+}
+
+.title {
+  background-color:#F0F0F0;
+  color: rgb(0, 0, 0);
+  margin: 10px;
+  box-shadow: 3px 3px;  }
+
+.title h1 {
+  font-family: fantasy;
+  color: #010101;
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.photo {
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.specs {
+  background-color: #F0F0F0;
+  color: #8D8D8D;
+  margin: 10px;
+  box-shadow: 3px 3px; }
+
+.specs, p {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px; }
+
+.fill {
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  margin: 0 auto;
+  box-shadow: 3px 3px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  margin: 0 auto; }
+
+.btn1 a {
+  text-decoration: none;
+  color: white;
+}
+
+.btn1 {
+  color: #8D8D8D;
+  background-color: #DB00FF;
+  border-radius: 20px;
+  box-shadow: 3px 3px; }
+
+.btn1:hover {
+  color: #fff;
+  background-color: rgb(128, 99, 226); }
+
+.btn2 {
+  color: #8D8D8D;
+  background-color: #DB00FF;
+  border-radius: 20px;
+  box-shadow: 3px 3px; }
+
+.btn2:hover {
+  color: #fff;
+  background-color: rgb(128, 99, 226); }
+
+.btn2 a {
+  text-decoration: none;
+  color: white;
+}
+
+.btnbot {
+  padding: 35px;
+}
+.btnbot1 {
+  background-color: #DB00FF;
+  color: #F0F0F0;
+  border-radius: 4px;
+  font-weight: bolder;
+  display: inline-block;
+  border: 1px solid #DB00FF;
+  padding: 8px;
+   }
+
+.btnbot1:hover {
+  color: rgb(12, 12, 10);
+  background-color: #8D8D8D; }
+
+.btnbot1 a {
+  text-decoration: none;
+  color: white;
+}
+
+.btnbot2 {
+  background-color: #DB00FF;
+  color: #F0F0F0;
+  border-radius: 4px;
+  font-weight: bolder;
+  display: inline-block;
+  border: 1px solid #DB00FF;
+  padding: 8px; }
+
+.btnbot2:hover {
+  color: rgb(12, 12, 10);
+  background-color: #8D8D8D; }
+
+.btnbot2 a {
+  text-decoration: none;
+  color: white;
+}

@@ -1,44 +1,62 @@
-<h1><%= @studio.name %></h1>
-<br>
-  <% if @studio.photo.attached? %>
-    <%= cl_image_tag @studio.photo.key, height: 150, width: 200, crop: :fill %>
-  <% else %>
-    <p>no image available</p>
-  <% end %>
-<br>
-<p>DETAILS:
-<%= @studio.description %>
-</p>
-<br>
-<p>
-SIZE: <%= @studio.size %> m2
-</p>
-<br>
-<p>
-EQUIPMENT: <%= @studio.equipment %>
-</p>
-<br>
-<p>
-LOCATION: <%= @studio.location %>
-</p>
-<br>
-<%= link_to "Go to all studios", root_path %>
-<br>
-<%= link_to 'See all reservations of this studio', studio_reservations_path(@studio) %>
-<br>
-<%= simple_form_for([@studio, @reservation]) do |f| %>
-  <p>Start date:</p>
-  <%= f.date_select :start_on %>
+<div class = 'show'>
+  <div>
+    <div class = 'title'>
+      <h1><%= @studio.name %></h1>
+    </div>
+    <div class = 'photo'>
+      <div class = 'pic'>
+        <% if @studio.photo.attached? %>
+          <%= cl_image_tag @studio.photo.key, height: 150, width: 200, crop: :fill %>
+      </div>
+      <% else %>
+        <p>no image available</p>
+      <% end %>
+    </div>
+  </div>
   <br>
-  <p>End date:</p>
-  <%= f.date_select :end_on %>
-  <br>
-  <%= f.submit %>
-</p>
-<br>
-<p>
-<%= link_to 'Edit the data', edit_studio_path %>
-<br>
-<%= link_to "Delete Studio", studio_path(@studio), method: :delete, data: {confirm: "Are you sure?"} %>
 
-<% end %>
+  <ul>
+    <div class = 'specs'>
+      <p>DETAILS:<%= @studio.description %></p>
+      <br>
+      <p>SIZE: <%= @studio.size %> m2</p>
+      <br>
+      <p>EQUIPMENT: <%= @studio.equipment %></p>
+      <br>
+      <p>LOCATION: <%= @studio.location %></p>
+      <br>
+      <div class = 'btn'>
+        <div class = 'btn1'>
+          <%= link_to "Go to all studios", root_path %>
+        </div class = 'btn1'>
+        <br>
+        <div class = 'btn2'>
+          <%= link_to 'See all reservations of this studio', studio_reservations_path(@studio) %>
+        </div class = 'btn2'>
+      </div>
+      <br>
+    </div>
+  </ul>
+
+  <div>
+    <div class = 'fill'>
+      <%= simple_form_for([@studio, @reservation]) do |f| %>
+        <p>Start date:</p>
+        <%= f.date_select :start_on %>
+        <br>
+        <p>End date:</p>
+        <%= f.date_select :end_on %>
+        <br>
+        <%= f.submit %>
+        <div class = 'btnbot'>
+          <div class = 'btnbot1'>
+            <%= link_to 'Edit the data', edit_studio_path %></td>
+          </div>
+          <div class = 'btnbot2'>
+            <%= link_to "Delete Studio", studio_path(@studio), method: :delete, data: {confirm: "Are you sure?"} %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
