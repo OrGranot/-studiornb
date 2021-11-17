@@ -2,4 +2,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1em;
+  justify-content: flex-start;
+  margin-top: 1em;
 }

@@ -7,7 +7,6 @@
   display: flex;
   align-items: center;
   padding: 1em;
-
   .panding {
     color: rgba(red, 0.8);
   }
@@ -16,10 +15,13 @@
     color: rgba(green, 0.8);
   }
 
+
 }
 
 .card-product .card-info-header  p {
     margin: 0;
+    font-size: 0.9em;
+
   }
 
 .card-product img {
