@@ -1,0 +1,42 @@
+.card-studio {
+  overflow: hidden;
+  background: #F0F0F0;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 500px;
+  border-radius: 7px;
+
+}
+
+.card-studio .content {
+  margin: 10px;
+}
+
+.card-image {
+  width: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-studio p {
+  color: #8D8D8D;
+}
+
+.card-studio h3 {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.card-studio a {
+    text-decoration: none;
+    color: white;
+}
+
+.card-studio .button {
+  background-color: #DB00FF;
+  color: #F0F0F0;
+  border-radius: 4px;
+  font-weight: bolder;
+  display: inline-block;
+  border: 1px solid #DB00FF;
+  padding: 8px;
+}
