@@ -7,6 +7,9 @@
 
 }
 
+.card-studio .content {
+  margin: 10px;
+}
 
 .card-image {
   width: 300px;
@@ -20,6 +23,7 @@
 
 .card-studio h3 {
   font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .card-studio a {
@@ -29,9 +33,10 @@
 
 .card-studio .button {
   background-color: #DB00FF;
-  color: white;
+  color: #F0F0F0;
   border-radius: 4px;
+  font-weight: bolder;
   display: inline-block;
   border: 1px solid #DB00FF;
-  padding: 5px;
+  padding: 8px;
 }
