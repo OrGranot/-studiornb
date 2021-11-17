@@ -1,10 +1,22 @@
 <h1>Hello <%= current_user.email %> we love you.</h1>
 <br>
 <h4>Your Reservations:</h4>
+
+<div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <h2><% @reservations.each do |reservation| %>
+        Studio:
+        <%= reservation.studio.name %></h2>
+    <p>Product description with <strong>relevant info</strong> only.</p>
+  </div>
+</div>
+
+
+
+
+
 <br>
-<% @reservations.each do |reservation| %>
-  Studio:
-  <%= reservation.studio.name %>
 <br>
   Starts on:
   <%= reservation.start_on %>
@@ -20,4 +32,4 @@
   <% end %>
   <br>
   <br>
-<% end %>
+  <% end %>
