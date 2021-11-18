@@ -16,7 +16,8 @@ puts "Creating studios"
     size: Faker::Number.decimal_part(digits: 2),
     equipment: Faker::Appliance.equipment,
     location: Faker::Nation.capital_city,
-    description: Faker::Lorem.paragraph(sentence_count: 4)
+    description: Faker::Lorem.paragraph(sentence_count: 4),
+    price: Faker::Number.decimal(l_digits: 2)
   )
   studio.user = User.last
   studio.save!
