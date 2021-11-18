@@ -22,7 +22,9 @@
           <% if reservations === 0 %>
             <div class="tag approved">no panding reservations</div>
           <% else %>
-            <div class="tag declined"><%= reservations %> pending reservation<%= reservations === 1 ? '' : 's' %></div>
+            <%= link_to studio_reservations_path(studio) do  %>
+              <div class="tag declined"><%= reservations %> pending reservation<%= reservations === 1 ? '' : 's' %></div>
+            <% end %>
           <% end %>
         </div>
         <%= link_to 'Check your bookings', studio_reservations_path(studio), class: "button" %>
