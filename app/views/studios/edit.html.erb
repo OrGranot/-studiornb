@@ -5,6 +5,7 @@
         <%= f.input :name %>
         <%= f.input :size %>
       </div>
+      <%= f.input :price %>
       <%= f.input :location %>
       <%= f.input :equipment %>
       <%= f.input :description %>
@@ -12,7 +13,7 @@
 
     <div class="form-actions d-flex">
       <%= f.input :photo, as: :file %>
-      <%= f.button :submit, 'Post your Studio', class: "button" %>
+      <%= f.button :submit, 'Update your Studio', class: "button" %>
     </div>
   <% end %>
 </div>

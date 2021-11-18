@@ -1,5 +1,12 @@
-<h1>Hello <span class="pink"><%= current_user.email %></span> we love you.</h1>
-<br>
+<div class = 'avatar'>
+    <% if current_user.photo.attached? %>
+      <%= cl_image_tag current_user.photo.key, height: 50, width: 50, crop: :fill %>
+    <% else %>
+      <p>no image available</p>
+    <% end %>
+</div>
+<h1>Hello <span class="pink"><%= current_user.name %></span> we love you.</h1>
+
 <h4>Your Reservations:</h4>
 <br>
 
