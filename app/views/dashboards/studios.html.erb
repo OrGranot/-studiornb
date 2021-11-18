@@ -1,0 +1,34 @@
+<h1>Hello <span class="pink"><%= current_user.email %></span> we love you.</h1>
+<br>
+<h4>Your studios:</h4>
+<br>
+
+<div class="card-grid">
+  <% @studios.each do |studio| %>
+    <div class="card-studio">
+      <% if studio.photo.attached? %>
+        <div class="card-image">
+          <%= cl_image_tag studio.photo.key, height: 300, width: 350, crop: :fill %>
+        </div>
+      <% else %>
+        <div class="card-image">
+          <p>no image available</p>
+        </div>
+      <% end %>
+      <div class="content">
+        <div class="d-flex justify-content-between">
+          <h3><%= studio.name %></h3>
+          <% reservations = studio.reservations.where(approved: nil).count %>
+          <% if reservations === 0 %>
+            <div class="tag approved">no panding reservations</div>
+          <% else %>
+            <%= link_to studio_reservations_path(studio) do  %>
+              <div class="tag declined"><%= reservations %> pending reservation<%= reservations === 1 ? '' : 's' %></div>
+            <% end %>
+          <% end %>
+        </div>
+        <%= link_to 'Check your bookings', studio_reservations_path(studio), class: "button" %>
+      </div>
+    </div>
+  <% end %>
+</div>

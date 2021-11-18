@@ -1,18 +1,25 @@
 .card-product {
   overflow: hidden;
-  height: 120px;
-  min-width: 200px;
+  min-height: 80px;
+  min-width: 370px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  padding: 1em;
-  .panding {
+  padding: 1em ;
+
+
+
+  .declined {
     color: rgba(red, 0.8);
   }
 
   .approved {
     color: rgba(green, 0.8);
+  }
+
+  .panding {
+    color: rgba(rgb(107, 107, 0), 1);
   }
 
 
@@ -26,7 +33,7 @@
 
 .card-product img {
   height: 100%;
-  width: 120px;
+
   object-fit: cover;
 }
 
@@ -37,7 +44,7 @@
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -46,4 +53,9 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+  width: 100%;
+
+  .status span {
+    font-weight: bold;
+  }
 }
