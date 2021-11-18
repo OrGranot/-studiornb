@@ -21,7 +21,6 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
-<<<<<<< HEAD
     <%= f.input :name,
                 hint: "change your name here",
                 required: false,
@@ -30,16 +29,15 @@
                 hint: "change your ugly photo here",
                 required: false,
                 input_html: { autocomplete: "picture" } %>
-=======
->>>>>>> 1b6041166f722c8629662e7c19dda5d0599b5ae7
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Update", class: "button"%>
   </div>
 <% end %>
-
-<h3>Cancel my account</h3>
+<br>
+<br>
+<h4>Cancel my account</h4>
 
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 

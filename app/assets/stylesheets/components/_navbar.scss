@@ -13,7 +13,9 @@
   width: 40px;
 }
 
-
+.nav-link {
+  margin: 0 20px;
+}
 
 .navbar i {
   color: #DB00FF;
@@ -28,4 +30,14 @@
   color: #DB00FF;
   font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
+}
+
+.nav-item:hover {
+  border-radius: 50px;
+  border-color: black;
+  box-shadow: 0 0px 30px rgba(0,0,0,0.3);
+}
+
+.nav-item {
+  border-radius: 50px;
 }
