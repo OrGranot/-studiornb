@@ -3,6 +3,10 @@ class DashboardsController < ApplicationController
     @reservations = Reservation.where(user: current_user)
   end
 
+  def studios
+    @studios = Studio.where(user: current_user)
+  end
+
   def edit
     @user = current_user
   end
@@ -18,4 +22,5 @@ class DashboardsController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :photo)
   end
+
 end

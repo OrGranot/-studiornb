@@ -15,6 +15,25 @@ class ReservationsController < ApplicationController
     end
   end
 
+  def accept
+
+  end
+
+  def decline
+
+  end
+
+  def update
+    @reservation = Reservation.find(params[:id])
+    if params[:approved] === "true"
+      approved = true;
+    else
+      approved = false;
+    end
+    @reservation.update(approved: approved)
+    redirect_to studio_reservations_path(params[:studio_id])
+  end
+
   private
 
   def reservation_params
