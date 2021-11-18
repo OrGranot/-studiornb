@@ -4,15 +4,14 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 350px;
   border-radius: 7px;
-
 }
 
 .card-studio .content {
   margin: 10px;
+
 }
 
 .card-image {
-  width: 300px;
   object-fit: cover;
   object-position: center;
 }
@@ -39,4 +38,5 @@
   display: inline-block;
   border: 1px solid #DB00FF;
   padding: 8px;
+
 }
