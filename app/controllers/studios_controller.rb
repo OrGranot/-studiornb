@@ -43,5 +43,4 @@ class StudiosController < ApplicationController
   def studio_params
     params.require(:studio).permit(:name, :size, :equipment, :location, :description, :photo, :price)
   end
-
 end

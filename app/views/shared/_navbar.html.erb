@@ -10,21 +10,34 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-
-      <% if user_signed_in?%>
-        <li class="nav-item active">
-        <%= link_to "Your Dashboard", dashboards_path, class: "nav-link"%>
-        </li>
-        <li class="nav-item active">
-          <%= link_to "Post Your Studio", new_studio_path, class: "nav-link"%>
-        </li>
-        <li class="nav-item active">
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-        </li>
-      <% else %>
-        <li class="nav-item active"><%= link_to "login", new_user_session_path, class: "nav-link" %></li>
-        <li class="nav-item active"><%= link_to "sign up", new_user_registration_path, class: "nav-link" %></li>
-      <% end %>
+      <div class = 'signed_in'>
+        <% if user_signed_in?%>
+          <div class="d-flex">
+            <li><%= link_to "Post Your Studio", new_studio_path, class: "nav-link" %></li>
+            <li class="nav-item dropdown">
+                <% if current_user.photo.attached? %>
+                  <%= cl_image_tag current_user.photo.key, height: 50, width: 50, crop: :fill,
+                  class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <% else %>
+                  <%= image_tag "https://thumbs.dreamstime.com/b/icono-de-avatar-dj-estilo-simple-vectorial-para-dise%C3%B1o-web-aislado-en-fondo-blanco-164370922.jpg",
+                  class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <% end %>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <%= link_to "Your Dashboard", dashboards_path, class: "dropdown-item" %>
+                <%= link_to "Edit your User", edit_user_registration_path, class: "dropdown-item"%>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              </div>
+            </li>
+          </div>
+      </div>
+      <div class = 'signed_out'>
+        <% else %>
+          <div class="d-flex">
+            <li class="nav-item active"><%= link_to "login", new_user_session_path, class: "nav-link" %></li>
+            <li class="nav-item active"><%= link_to "sign up", new_user_registration_path, class: "nav-link" %></li>
+          </div>
+        <% end %>
+      </div>
     </ul>
   </div>
 </div>
