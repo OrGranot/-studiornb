@@ -4,6 +4,7 @@
 <div class="card-grid">
   <% @studios.each do |studio| %>
     <div class="card-studio">
+
     <div class="card-image">
       <% if studio.photo.attached? %>
              <%= cl_image_tag studio.photo.key, height: 300, width: 500, crop: :fill %>
@@ -18,8 +19,12 @@
               <div class="desc">
                 <p><%= studio.description %></p>
               </div>
+            <div class="price">
+              <h5><%= studio.price %>€</h5>
+            </div>
           </div>
           <div class="button"><%= link_to 'Details', studio_path(studio) %></div>
+
         </div>
       </div>
   <% end %>
