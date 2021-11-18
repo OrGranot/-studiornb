@@ -1,12 +1,13 @@
 .card-product {
   overflow: hidden;
-  height: 120px;
+  min-height: 80px;
   min-width: 200px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  padding: 1em;
+  padding: 1em ;
+
   .panding {
     color: rgba(red, 0.8);
   }

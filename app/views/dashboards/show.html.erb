@@ -11,8 +11,8 @@
           <h2 class="mr-2"><span class="pink-2"><%= reservation.studio.name %></span></h2>
           <p>at <%= reservation.studio.location %></p>
         </div>
-        <p><%= reservation.start_on.to_formatted_s(:long_ordinal) %> to <%= reservation.end_on.to_formatted_s(:long_ordinal) %></p>
-        <p>Status:
+        <p>from: <span class="date"><%= reservation.start_on.to_formatted_s(:long_ordinal) %></span></p>
+        <p>to: <span class="date"><%= reservation.end_on.to_formatted_s(:long_ordinal) %></span></p>        <p>Status:
           <% if reservation.approved %>
             <span class="approved">Approved</span>
           <% else %>

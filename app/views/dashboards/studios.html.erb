@@ -1,6 +1,8 @@
-<div class="index-container-headline">
-  <span class="headline"><h1>Studios near you in <span class="pink">Berlin</span></h1></span>
-</div>
+<h1>Hello <span class="pink"><%= current_user.email %></span> we love you.</h1>
+<br>
+<h4>Your studios:</h4>
+<br>
+
 <div class="card-grid">
   <% @studios.each do |studio| %>
     <div class="card-studio">
@@ -14,12 +16,11 @@
         </div>
       <% end %>
       <div class="content">
-        <div class="text">
+        <div class="d-flex justify-content-between">
           <h3><%= studio.name %></h3>
-          <h4><%= studio.location%></h4>
-          <p><%= studio.description %></p>
+          <div class="tag">1 pending reservation</div>
         </div>
-        <%= link_to 'Details', studio_path(studio), class: "button" %>
+        <%= link_to 'Check your bookings', studio_path(studio), class: "button" %>
       </div>
     </div>
   <% end %>
