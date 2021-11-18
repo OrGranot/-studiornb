@@ -20,7 +20,7 @@
           <h3><%= studio.name %></h3>
           <div class="tag">1 pending reservation</div>
         </div>
-        <%= link_to 'Check your bookings', studio_path(studio), class: "button" %>
+        <%= link_to 'Check your bookings', studio_reservations_path(studio), class: "button" %>
       </div>
     </div>
   <% end %>

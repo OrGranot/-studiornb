@@ -21,8 +21,8 @@
             <% end %>
           </p>
           <div class="control-links">
-            <%= link_to "Approve", "#", class: "reservation-control approved" %>
-            <%= link_to "Decline", "#", class: "reservation-control panding" %>
+            <%= link_to "Approve", studio_reservation_path(params[:studio_id] ,reservation, approved: true), method: :patch, class: "reservation-control approved" %>
+            <%= link_to "Decline", studio_reservation_path(params[:studio_id] ,reservation, approved: false), method: :patch, class: "reservation-control panding" %>
           </div>
         </div>
       </div>
