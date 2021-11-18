@@ -22,7 +22,7 @@
                   <p><%= studio.description %></p>
                 </div>
               <div class="price">
-                <h5><%= studio.price %> €</h5>
+                <h5><%= studio.price.to_i %> € / Day</h5>
               </div>
             </div>
             <div class="button"><%= link_to 'Details', studio_path(studio) %></div>
