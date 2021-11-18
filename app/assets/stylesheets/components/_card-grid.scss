@@ -5,3 +5,8 @@
   justify-content: flex-start;
   margin-top: 1em;
 }
+
+.card-product:hover {
+  border-color: black;
+  box-shadow: 0 0px 30px rgba(0,0,0,0.3);
+}
