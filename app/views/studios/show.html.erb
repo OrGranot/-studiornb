@@ -6,22 +6,25 @@
     <p>no image available</p>
   <% end %>
 <br>
-<p>DETAILS:
+<p>Details:
 <%= @studio.description %>
 </p>
 <br>
 <p>
-SIZE: <%= @studio.size %> m2
+Size: <%= @studio.size %> m2
 </p>
 <br>
 <p>
-EQUIPMENT: <%= @studio.equipment %>
+Equipment: <%= @studio.equipment %>
 </p>
 <br>
 <p>
-LOCATION: <%= @studio.location %>
+Location: <%= @studio.location %>
 </p>
 <br>
+<p>
+Price: <%= @studio.price %>€
+</p>
 <%= link_to "Go to all studios", root_path %>
 <br>
 <%= link_to 'See all reservations of this studio', studio_reservations_path(@studio) %>
