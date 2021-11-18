@@ -1,10 +1,37 @@
 <h1>This studio reservations</h1>
 
-<% @reservations.each do |reservation| %>
-<div class="card">
-<h3> Reservation in: <%= reservation.studio.name %></h3>
-<h4>STARTING ON: <%= reservation.start_on%></h4>
-<p>FINISIHING ON: <%= reservation.end_on %></p>
-<p>CONFIRMED? <%= reservation.approved %></p>
+
+
+<div class="card-grid">
+  <% @reservations.each do |reservation| %>
+    <div class="card-product">
+      <div class="card-product-infos">
+        <div class="card-info-header d-flex justify-content-between align-items-center">
+          <h2 class="mr-2"><span class="pink-2"><%= reservation.user.email %></span></h2>
+          <div class="avatar">profile pic here</div>
+        </div>
+        <p>from: <span class="date"><%= reservation.start_on.to_formatted_s(:long_ordinal) %></span></p>
+        <p>to: <span class="date"><%= reservation.end_on.to_formatted_s(:long_ordinal) %></span></p>
+        <div class="status d-flex justify-content-between align-items-center">
+          <p>Status:
+            <span>
+              <% if reservation.approved.nil? %>
+                <span class="panding">Pending</span>
+              <% elsif reservation.approved %>
+                <span class="approved">Approved</span>
+              <% else %>
+                <span class="declined">Declined</span>
+              <% end %>
+            </span>
+          </p>
+          <div class="control-links">
+            <% if reservation.approved.nil? %>
+              <%= link_to "Approve", studio_reservation_path(params[:studio_id] ,reservation, approved: true), method: :patch, class: "reservation-control approved" %>
+              <%= link_to "Decline", studio_reservation_path(params[:studio_id] ,reservation, approved: false), method: :patch, class: "reservation-control declined" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
-<% end %>

@@ -1,0 +1,25 @@
+.date {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.status {
+margin-top: 1em;
+
+  p {
+    margin: 0;
+  }
+}
+
+.control-links {
+  margin-left: 3.5em;
+}
+
+.reservation-control {
+  font-size: 0.9em;
+  font-weight: bold;
+
+  & + & {
+    margin-left: 0.5em;
+  }
+}

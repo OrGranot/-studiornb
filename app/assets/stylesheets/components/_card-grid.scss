@@ -1,9 +1,10 @@
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1em;
-  justify-content: flex-start;
+  gap: 1.5em;
+  justify-items: center;
   margin-top: 1em;
+
 }
 
 .card-product:hover {

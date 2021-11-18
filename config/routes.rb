@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     resources :reservations
   end
   get "dashboards", to: "dashboards#show"
+  get "dashboards/studios", to: "dashboards#studios"
 end
