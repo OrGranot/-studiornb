@@ -14,15 +14,21 @@
         <p>to: <span class="date"><%= reservation.end_on.to_formatted_s(:long_ordinal) %></span></p>
         <div class="status d-flex justify-content-between align-items-center">
           <p>Status:
-            <% if reservation.approved %>
-              <span class="approved">Approved</span>
-            <% else %>
-              <span class="panding">Pending</span>
-            <% end %>
+            <span>
+              <% if reservation.approved.nil? %>
+                <span class="panding">Pending</span>
+              <% elsif reservation.approved %>
+                <span class="approved">Approved</span>
+              <% else %>
+                <span class="declined">Declined</span>
+              <% end %>
+            </span>
           </p>
           <div class="control-links">
-            <%= link_to "Approve", studio_reservation_path(params[:studio_id] ,reservation, approved: true), method: :patch, class: "reservation-control approved" %>
-            <%= link_to "Decline", studio_reservation_path(params[:studio_id] ,reservation, approved: false), method: :patch, class: "reservation-control panding" %>
+            <% if reservation.approved.nil? %>
+              <%= link_to "Approve", studio_reservation_path(params[:studio_id] ,reservation, approved: true), method: :patch, class: "reservation-control approved" %>
+              <%= link_to "Decline", studio_reservation_path(params[:studio_id] ,reservation, approved: false), method: :patch, class: "reservation-control panding" %>
+            <% end %>
           </div>
         </div>
       </div>

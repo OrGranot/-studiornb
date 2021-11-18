@@ -8,7 +8,11 @@
   align-items: center;
   padding: 1em ;
 
-  .panding {
+  .status span {
+    font-weight: bold;
+  }
+
+  .declined {
     color: rgba(red, 0.8);
   }
 
@@ -16,7 +20,9 @@
     color: rgba(green, 0.8);
   }
 
-
+  .panding {
+    color: rgba(yellow, 0.8);
+  }
 }
 
 .card-product .card-info-header  p {
