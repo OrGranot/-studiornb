@@ -3,8 +3,9 @@
   background: #F0F0F0;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 350px;
+  height: 500px;
   border-radius: 7px;
-
+  position: relative;
 }
 
 .card-studio .content {
@@ -39,4 +40,13 @@
   display: inline-block;
   border: 1px solid #DB00FF;
   padding: 8px;
+  margin-bottom: 10px;
+  position: absolute;
+  bottom: 0px;
+}
+
+.desc {
+  overflow: hidden;
+  max-width: 250px;
+  max-height: 45px;
 }
