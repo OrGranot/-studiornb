@@ -18,7 +18,12 @@
       <div class="content">
         <div class="d-flex justify-content-between">
           <h3><%= studio.name %></h3>
-          <div class="tag">1 pending reservation</div>
+          <% reservations = studio.reservations.where(approved: nil).count %>
+          <% if reservations === 0 %>
+            <div class="tag approved">no panding reservations</div>
+          <% else %>
+            <div class="tag declined"><%= reservations %> pending reservation<%= reservations === 1 ? '' : 's' %></div>
+          <% end %>
         </div>
         <%= link_to 'Check your bookings', studio_reservations_path(studio), class: "button" %>
       </div>

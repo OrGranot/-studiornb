@@ -31,6 +31,7 @@ class ReservationsController < ApplicationController
       approved = false;
     end
     @reservation.update(approved: approved)
+    redirect_to studio_reservations_path(params[:studio_id])
   end
 
   private

@@ -7,5 +7,9 @@ class DashboardsController < ApplicationController
     @studios = Studio.where(user: current_user)
   end
 
+  def pandingResevations
+    @studios = Studio.where(user: current_user)
+
+  end
 
 end
