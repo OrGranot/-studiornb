@@ -1,6 +1,28 @@
 class StudiosController < ApplicationController
   def index
-    @studios = Studio.all
+
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR address ILIKE :query"
+      @studios = Studio.where(sql_query, query: "%#{params[:query]}%")
+
+          @markers = @studios.geocoded.map do |studio|
+          {
+            lat: studio.latitude,
+            lng: studio.longitude,
+            info_window: render_to_string(partial: "info_window", locals: { studio: studio })
+          }
+        end
+
+    else
+      @studios = Studio.all
+        @markers = @studios.geocoded.map do |studio|
+        {
+          lat: studio.latitude,
+          lng: studio.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { studio: studio })
+        }
+        end
+    end
   end
 
   def new
@@ -41,6 +63,7 @@ class StudiosController < ApplicationController
   private
 
   def studio_params
-    params.require(:studio).permit(:name, :size, :equipment, :location, :description, :photo, :price)
+    params.require(:studio).permit(:name, :size, :equipment, :address, :description, :photo, :price)
   end
+
 end

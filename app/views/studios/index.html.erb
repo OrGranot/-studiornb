@@ -1,28 +1,60 @@
-<div>
-  <div class="index-container">
-    <div class="index-container-headline">
-      <span class="headline"><h1>Studios near you in <span class="pink">Berlin</span></h1></span>
-    </div>
+
+<div class="index-container">
+  <div class="index-container-headline">
+    <h1 class="headline">
+      Studios near you in
+      <span class="pink">
+       <% if params[:query] %>
+         <%= params[:query].capitalize %>
+       <% else %>
+         the World
+       <% end %>
+      </span>
+    </h1>
   </div>
+
+</div>
+<div class = 'search'><%= form_tag studios_path, method: :get do %>
+  <div class = 'bar'>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a studio around the world!",
+      id: 'search_input'
+    %>
+  </div>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+</div>
+  <div style="width: 100%; height: 600px;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
+<div>
   <div class="card-grid">
     <% @studios.each do |studio| %>
       <div class="card-studio">
-        <div class="card-image">
-          <% if studio.photo.attached? %>
-            <%= link_to studio_path(studio) do %>
+
+
+      <div class="card-image">
+        <% if studio.photo.attached? %>
               <%= cl_image_tag studio.photo.key, height: 300, width: 500, crop: :fill %>
-            <% end %>
-          <% else %>
-            <p>no image available</p>
-          <% end %>
-        </div>
-        <div class="content">
-          <div class="text">
-            <h3><%= studio.name %></h3>
-            <h4><%= studio.location%></h4>
-              <div class="desc">
-                <p><%= studio.description %></p>
-              </div>
+              <% else %>
+                <p>no image available</p>
+              <% end %>
+
+      </div>
+          <div class="content">
+            <div class="text">
+              <h3><%= studio.name %></h3>
+              <h4><%= studio.address%></h4>
+                <div class="desc">
+                  <p><%= studio.description %></p>
+                  <p><%= studio.size %></p>
+                </div>
+
               <div class="price">
                 <h5><%= studio.price.to_i %> € / Day</h5>
               </div>

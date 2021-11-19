@@ -4,7 +4,7 @@ class CreateStudios < ActiveRecord::Migration[6.0]
       t.string :name
       t.integer :size
       t.text :equipment
-      t.string :location
+      t.string :address
       t.text :description
       t.references :user, null: false, foreign_key: true
 

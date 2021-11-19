@@ -17,7 +17,7 @@
             <li class="nav-item dropdown">
                 <% if current_user.photo.attached? %>
                   <%= cl_image_tag current_user.photo.key, height: 50, width: 50, crop: :fill,
-                  class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  class: "avatar avatar-bordered dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                 <% else %>
                   <%= image_tag "https://thumbs.dreamstime.com/b/icono-de-avatar-dj-estilo-simple-vectorial-para-dise%C3%B1o-web-aislado-en-fondo-blanco-164370922.jpg",
                   class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

@@ -3,7 +3,7 @@
   <% if @studio.photo.attached? %>
     <%= cl_image_tag @studio.photo.key, height: 150, width: 200, crop: :fill %>
   <% else %>
-    <p>no image available</p>
+    <%= image_tag "default-studio.jpg", height: 150, width: 200, crop: :fill %>
   <% end %>
 <br>
 <p>Details:
@@ -19,7 +19,7 @@ Equipment: <%= @studio.equipment %>
 </p>
 <br>
 <p>
-Location: <%= @studio.location %>
+<Address></Address>: <%= @studio.address %>
 </p>
 <br>
 <p>

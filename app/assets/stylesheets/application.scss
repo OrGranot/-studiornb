@@ -8,6 +8,7 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import 'mapbox-gl/dist/mapbox-gl';
 
 
 // Your CSS partials
@@ -17,7 +18,11 @@
 @import "components/button";
 @import "components/tag";
 @import "pages/index";
+
 @import "pages/dashboard";
+
+@import "pages/dashboard_studios";
+
 @import "studios/index";
 @import "studios/new";
 @import "studios/reservations";

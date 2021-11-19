@@ -3,14 +3,15 @@
   background: #F0F0F0;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 350px;
-  height: 500px;
   border-radius: 7px;
   position: relative;
 
   &:hover .card-image {
     transform: scale(1.025);
   }
-}
+
+
+
 
 .card-studio .content {
   margin: 10px;
@@ -32,6 +33,7 @@
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
 }
+
 
 .card-studio a {
     text-decoration: none;
