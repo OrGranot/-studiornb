@@ -8,6 +8,12 @@ class StudiosController < ApplicationController
         lng: studio.longitude,
         info_window: render_to_string(partial: "info_window", locals: { studio: studio })
       }
+
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR address ILIKE :query"
+      @studios = Studio.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @studios = Studio.all
     end
   end
 
