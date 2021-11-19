@@ -1,6 +1,11 @@
 class StudiosController < ApplicationController
   def index
-    @studios = Studio.all
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR location ILIKE :query"
+      @studios = Studio.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @studios = Studio.all
+    end
   end
 
   def new
