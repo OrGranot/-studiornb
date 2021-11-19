@@ -12,8 +12,8 @@
           <%= image_tag "default-studio.jpg", height: 300, width: 350, crop: :fill %>
         </div>
       <% end %>
-    </div>
       <div class="content">
+    </div>
         <div class="d-flex justify-content-between align-items-center">
           <h3><%= studio.name %></h3>
           <% reservations = studio.reservations.where(approved: nil).count %>
