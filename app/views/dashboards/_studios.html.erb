@@ -1,19 +1,15 @@
-<div class="card-grid">
   <% @studios.each do |studio| %>
-
     <div class="card-studio my-studio">
       <% if studio.photo.attached? %>
         <%= link_to studio_path(studio) do %>
           <%= cl_image_tag studio.photo.key, height: 300, width: 500, crop: :fill %>
         <% end %>
       <% else %>
-
         <div class="card-image">
           <%= image_tag "default-studio.jpg", height: 300, width: 350, crop: :fill %>
         </div>
       <% end %>
       <div class="content">
-    </div>
         <div class="d-flex justify-content-between align-items-center">
           <h3><%= studio.name %></h3>
           <% reservations = studio.reservations.where(approved: nil).count %>
@@ -23,9 +19,8 @@
             <%= link_to studio_reservations_path(studio) do  %>
               <div class="tag declined"><%= reservations %> pending reservation<%= reservations === 1 ? '' : 's' %></div>
             <% end %>
-          <% end %>
+         <% end %>
         </div>
       </div>
     </div>
   <% end %>
-</div>

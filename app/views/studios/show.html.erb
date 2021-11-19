@@ -1,33 +1,39 @@
-<div class=“container”>
-  <% if @studio.photo.attached? %>
-    <div class="show-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path @studio.photo.key %>)"></div>
+          <% if @studio.photo.attached? %>
+            <% photo = cl_image_path @studio.photo.key %>
+          <% else %>
+            <% photo = image_path 'default-studio.jpg'%>
+          <% end %>
 
-  <% end %>
-    <h1 id=‘studioName’><strong><%= @studio.name %></strong></h1>
-  </div>
+    <div class="banner border-rounded" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= photo %>);">
+      <div class="container">
+        <h1 id=‘studioName’ class="text-center"><strong><%= @studio.name %></strong></h1>
+      </div>
+    </div>
+
 <div class=“content-wrapper d-flex justify-content-between”>
   <div class=‘container-text col-8’>
     <div class=“d-flex justify-content-between”>
-      <div class=“d-flex mt-3”>
-        <p class="mr-3">size: <%= @studio.size %> m2</p>
-        <p>location: <%= @studio.address %></p>
+      <div class="d-flex mt-3">
+        <p class="mr-3"><strong>Size:</strong> <%= @studio.size %> m^2</p>
+        <p><strong>location:</strong>: <%= @studio.address %></p>
       </div>
 
     </div>
     <div>
-      <p>equipment: <%= @studio.equipment %></p>
+      <p><strong>equipment:</strong> <%= @studio.equipment %></p>
       <p><%= @studio.description %></p>
     </div>
+    <hr>
   </div>
-  <div class=‘form’>
+  <div class="form d-flex">
   <%= simple_form_for([@studio, @reservation]) do |f| %>
     <div class=‘form-group’>
-      <label>Start date</label>
+      <label>From:</label>
       <div class=‘form-control’>
         <%= f.date_select :start_on %>
       </div>
     <div class=‘form-group’>
-      <label>End date</label>
+      <label>To:</label>
       <div class=‘form-control’>
         <%= f.date_select :end_on %>
       </div>
