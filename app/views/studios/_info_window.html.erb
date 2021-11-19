@@ -1,2 +1,11 @@
-<h2><%= studio.name %></h2>
-<p><%= studio.address %></p>
+<div class="map-card-container">
+<div class="map-img">
+  <% if studio.photo.attached? %>
+    <%= cl_image_tag studio.photo.key, height: 150, width: 200, crop: :fill %>
+  <% end %>
+</div>
+  <h2><%= studio.name %></h2>
+  <div class="button">
+    <%= link_to 'Details', studio_path(studio) %>
+  </div>
+</div>
