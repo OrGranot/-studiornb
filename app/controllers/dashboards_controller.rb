@@ -1,6 +1,7 @@
 class DashboardsController < ApplicationController
   def show
     @reservations = Reservation.where(user: current_user)
+    @studios = Studio.where(user: current_user)
   end
 
   def studios

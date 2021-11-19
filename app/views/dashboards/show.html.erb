@@ -2,37 +2,13 @@
   <div class = 'title'>
     <h1>Hello <span class="pink"><%= current_user.name %></span>, we love you.</h1>
   </div>
-  <br>
-  <div class = 'reservations'>
-    <h4>Your Reservations:</h4>
+  <div class="display" data-controller="display">
+    <div class="lisener" data-action="click=>display#render">My studios</div>
+    <div class="lisener">Your reservations</div>
+
+    <div data-display-target="canvas">
+      <%= render 'reservations.html.erb' %>
+    </div>
   </div>
 </div>
 <br>
-
-<div class="card-grid">
-  <% @reservations.each do |reservation| %>
-    <div class="card-product">
-      <div class="card-product-infos">
-        <div class="card-info-header d-flex justify-content-between align-items-center">
-          <h2 class="mr-2"><span class="pink-2"><%= reservation.studio.name %></span></h2>
-          <p>at <%= reservation.studio.location %></p>
-        </div>
-        <p>from: <span class="date"><%= reservation.start_on.to_formatted_s(:long_ordinal) %></span></p>
-        <p>to: <span class="date"><%= reservation.end_on.to_formatted_s(:long_ordinal) %></span></p>
-        <p>Status:
-            <span>
-              <% if reservation.approved.nil? %>
-                <span class="panding">Pending</span>
-              <% elsif reservation.approved %>
-                <span class="approved">Approved</span>
-              <% else %>
-                <span class="declined">Declined</span>
-              <% end %>
-            </span>
-          </p>
-      </div>
-    </div>
-  <% end %>
-</div>
-
-<%= link_to "my studios", dashboards_studios_path %>

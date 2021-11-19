@@ -22,17 +22,14 @@
       <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
+    </div>
+
+    <div class="form-actions d-flex align-items-end">
       <%= f.input :photo,
                   required: false,
                   autofocus: true,
                   input_html: { autocomplete: "photo" }%>
-    </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up", class: "button" %>
+        <%= f.button :submit, "Sign up", class: "button" %>
     </div>
   <% end %>
-  <div class="links">
-    <%= render "devise/shared/links" %>
-  </div>
 </div>
