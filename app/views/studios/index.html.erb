@@ -3,6 +3,7 @@
   <div class="index-container-headline">
   <span class="headline"><h1>Studios near you in <span class="pink">the World</span></h1></span>
   </div>
+
 </div>
 <div><%= form_tag studios_path, method: :get do %>
   <%= text_field_tag :query,
@@ -14,6 +15,12 @@
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 </div>
+  <div style="width: 100%; height: 600px;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+  
 <div>
   <div class="card-grid">
     <% @studios.each do |studio| %>
@@ -30,7 +37,7 @@
           <div class="content">
             <div class="text">
               <h3><%= studio.name %></h3>
-              <h4><%= studio.location%></h4>
+              <h4><%= studio.address%></h4>
                 <div class="desc">
                   <p><%= studio.description %></p>
                   <p><%= studio.size %></p>

@@ -1,0 +1,27 @@
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.mapboxgl-map {
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.map-card-container {
+  overflow: hidden;
+}
+
+
+.map-img img {
+  border-radius: 10px;
+}
+
+.map-card-container a {
+    text-decoration: none;
+    color: white;
+}
