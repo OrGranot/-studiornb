@@ -9,7 +9,9 @@
       <div class="card-studio">
         <div class="card-image">
           <% if studio.photo.attached? %>
-            <%= cl_image_tag studio.photo.key, height: 300, width: 500, crop: :fill %>
+            <%= link_to studio_path(studio) do %>
+              <%= cl_image_tag studio.photo.key, height: 300, width: 500, crop: :fill %>
+            <% end %>
           <% else %>
             <p>no image available</p>
           <% end %>

@@ -6,6 +6,10 @@
   height: 500px;
   border-radius: 7px;
   position: relative;
+
+  &:hover .card-image {
+    transform: scale(1.025);
+  }
 }
 
 .card-studio .content {
@@ -16,6 +20,8 @@
 .card-image {
   object-fit: cover;
   object-position: center;
+  transition: transform 300ms ease-in-out;
+  cursor: pointer;
 }
 
 .card-studio p {

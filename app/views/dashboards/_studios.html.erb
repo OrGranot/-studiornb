@@ -1,15 +1,15 @@
 <div class="card-grid">
   <% @studios.each do |studio| %>
     <div class="card-studio">
+     <div class="card-image">
       <% if studio.photo.attached? %>
-        <div class="card-image">
-          <%= cl_image_tag studio.photo.key, height: 300, width: 350, crop: :fill %>
-        </div>
+        <%= link_to studio_path(studio) do %>
+          <%= cl_image_tag studio.photo.key, height: 300, width: 500, crop: :fill %>
+        <% end %>
       <% else %>
-        <div class="card-image">
-          <p>no image available</p>
-        </div>
+        <p>no image available</p>
       <% end %>
+    </div>
       <div class="content">
         <div class="d-flex justify-content-between">
           <h3><%= studio.name %></h3>
