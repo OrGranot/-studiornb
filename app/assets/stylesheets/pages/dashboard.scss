@@ -1,0 +1,22 @@
+.hidden {
+  display: none;
+}
+
+.tabs a {
+  color: #DB00FF;
+  text-decoration: none;
+  margin-top: 1em;
+  padding: 0.1em 0.5em ;
+  display: inline-block;
+  animation: border 1s linear;
+
+
+  &:first-child {
+
+    border-right: 1px solid currentColor;
+  }
+  &:hover {
+    font-weight: bold;
+  }
+
+}

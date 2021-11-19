@@ -4,7 +4,6 @@ class StudiosController < ApplicationController
     if params[:query].present?
       sql_query = "name ILIKE :query OR address ILIKE :query"
       @studios = Studio.where(sql_query, query: "%#{params[:query]}%")
-
           @markers = @studios.geocoded.map do |studio|
           {
             lat: studio.latitude,
@@ -41,6 +40,7 @@ class StudiosController < ApplicationController
 
   def show
     @studio = Studio.find(params[:id])
+
     @reservation = Reservation.new
   end
 

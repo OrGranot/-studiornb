@@ -25,13 +25,13 @@
                   hint: "Change your name here.",
                   required: false,
                   input_html: { autocomplete: "bob" } %>
+    </div>
+
+    <div class="form-actions d-flex align-items-end">
       <%= f.input :photo,
                   hint: "Change your ugly photo here.",
                   required: false,
                   input_html: { autocomplete: "picture" } %>
-    </div>
-
-    <div class="form-actions">
       <%= f.button :submit, "Update", class: "button"%>
     </div>
   <% end %>

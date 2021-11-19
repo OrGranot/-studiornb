@@ -6,7 +6,13 @@
   border-radius: 7px;
   position: relative;
   padding-bottom: 3.5em;
+
+  &:hover .card-image {
+    transform: scale(1.025);
+  }
 }
+
+
 
 .card-studio .content {
   margin: 10px;
@@ -16,10 +22,13 @@
 .card-image {
   object-fit: cover;
   object-position: center;
+  transition: transform 300ms ease-in-out;
+  cursor: pointer;
 }
 
 .card-studio p {
   color: #8D8D8D;
+  margin-bottom: 2em;
 }
 
 .card-studio h3 {

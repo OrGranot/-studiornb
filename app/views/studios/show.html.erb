@@ -1,47 +1,40 @@
-<h1><%= @studio.name %></h1>
-<br>
+<div class=“container”>
   <% if @studio.photo.attached? %>
-    <%= cl_image_tag @studio.photo.key, height: 150, width: 200, crop: :fill %>
-  <% else %>
-    <%= image_tag "default-studio.jpg", height: 150, width: 200, crop: :fill %>
-  <% end %>
-<br>
-<p>Details:
-<%= @studio.description %>
-</p>
-<br>
-<p>
-Size: <%= @studio.size %> m2
-</p>
-<br>
-<p>
-Equipment: <%= @studio.equipment %>
-</p>
-<br>
-<p>
-<Address></Address>: <%= @studio.address %>
-</p>
-<br>
-<p>
-Price: <%= @studio.price %>€
-</p>
-<%= link_to "Go to all studios", root_path %>
-<br>
-<%= link_to 'See all reservations of this studio', studio_reservations_path(@studio) %>
-<br>
-<%= simple_form_for([@studio, @reservation]) do |f| %>
-  <p>Start date:</p>
-  <%= f.date_select :start_on %>
-  <br>
-  <p>End date:</p>
-  <%= f.date_select :end_on %>
-  <br>
-  <%= f.submit %>
-</p>
-<br>
-<p>
-<%= link_to 'Edit the data', edit_studio_path %>
-<br>
-<%= link_to "Delete Studio", studio_path(@studio), method: :delete, data: {confirm: "Are you sure?"} %>
+    <div class="show-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path @studio.photo.key %>)"></div>
 
+  <% end %>
+    <h1 id=‘studioName’><strong><%= @studio.name %></strong></h1>
+  </div>
+<div class=“content-wrapper d-flex justify-content-between”>
+  <div class=‘container-text col-8’>
+    <div class=“d-flex justify-content-between”>
+      <div class=“d-flex mt-3”>
+        <p class="mr-3">size: <%= @studio.size %> m2</p>
+        <p>location: <%= @studio.address %></p>
+      </div>
+
+    </div>
+    <div>
+      <p>equipment: <%= @studio.equipment %></p>
+      <p><%= @studio.description %></p>
+    </div>
+  </div>
+  <div class=‘form’>
+  <%= simple_form_for([@studio, @reservation]) do |f| %>
+    <div class=‘form-group’>
+      <label>Start date</label>
+      <div class=‘form-control’>
+        <%= f.date_select :start_on %>
+      </div>
+    <div class=‘form-group’>
+      <label>End date</label>
+      <div class=‘form-control’>
+        <%= f.date_select :end_on %>
+      </div>
+    </div>
+  </div>
+  <div> <%= f.button :submit, "Reserve", class: "button" %>
+  </div>
+  </div>
+</div>
 <% end %>
