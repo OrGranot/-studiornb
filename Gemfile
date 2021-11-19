@@ -65,4 +65,9 @@ gem 'devise'
 
 gem 'faker'
 gem 'cloudinary', '~> 1.16.0'
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'pg_search', '~> 2.3.0'
+
+gem 'elasticsearch', "< 7.14" # to use a supported version of the Elasticsearch Ruby client
+gem 'searchkick', '~> 4.0'
+
+gem "algoliasearch-rails"

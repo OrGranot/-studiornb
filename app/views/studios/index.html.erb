@@ -1,9 +1,19 @@
 
 <div class="index-container">
   <div class="index-container-headline">
-  <span class="headline"><h1>Studios near you in <span class="pink">Berlin</span></h1></span>
+  <span class="headline"><h1>Studios near you in <span class="pink">the World</span></h1></span>
   </div>
 </div>
+<div><%= form_tag studios_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a studio around the world!"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+</div>
+<div>
   <div class="card-grid">
     <% @studios.each do |studio| %>
       <div class="card-studio">
@@ -22,6 +32,7 @@
               <h4><%= studio.location%></h4>
                 <div class="desc">
                   <p><%= studio.description %></p>
+                  <p><%= studio.size %></p>
                 </div>
               <div class="price">
                 <h5><%= studio.price.to_i %> € / Day</h5>
@@ -33,3 +44,4 @@
         </div>
     <% end %>
   </div>
+</div>
