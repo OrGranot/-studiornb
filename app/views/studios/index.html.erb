@@ -1,16 +1,27 @@
 
 <div class="index-container">
   <div class="index-container-headline">
-  <span class="headline"><h1>Studios near you in <span class="pink">the World</span></h1></span>
+    <h1 class="headline">
+      Studios near you in
+      <span class="pink">
+       <% if params[:query] %>
+         <%= params[:query].capitalize %>
+       <% else %>
+         the World
+       <% end %>
+      </span>
+    </h1>
   </div>
 </div>
-<div><%= form_tag studios_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a studio around the world!",
-    id: 'search_input'
-  %>
+<div class = 'search'><%= form_tag studios_path, method: :get do %>
+  <div class = 'bar'>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a studio around the world!",
+      id: 'search_input'
+    %>
+  </div>
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 </div>
