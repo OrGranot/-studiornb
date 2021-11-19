@@ -1,5 +1,6 @@
 class StudiosController < ApplicationController
   def index
+
     @studios = Studio.all
 
     @markers = @studios.geocoded.map do |studio|
@@ -8,12 +9,13 @@ class StudiosController < ApplicationController
         lng: studio.longitude,
         info_window: render_to_string(partial: "info_window", locals: { studio: studio })
       }
-
+    end
     if params[:query].present?
       sql_query = "name ILIKE :query OR address ILIKE :query"
       @studios = Studio.where(sql_query, query: "%#{params[:query]}%")
     else
       @studios = Studio.all
+
     end
   end
 
