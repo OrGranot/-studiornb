@@ -2,13 +2,14 @@
   <div class = 'title'>
     <h1>Hello <span class="pink"><%= current_user.name %></span>, we love you.</h1>
   </div>
-  <div class="display" data-controller="display">
-    <div class="lisener" data-action="click=>display#render">My studios</div>
-    <div class="lisener">Your reservations</div>
 
-    <div data-display-target="canvas">
-      <%= render 'reservations.html.erb' %>
-    </div>
+  <div class="tabs">
+    <%= link_to "My studios", dashboards_path(page: 'studios') %>
+    <%= link_to "My reservations", dashboards_path(page: 'reservations') %>
   </div>
+
+  <div class="rendered">
+    <%= render "#{params[:page]}.html.erb" %>
+  </div>
+
 </div>
-<br>
