@@ -15,7 +15,7 @@ puts "Creating studios"
     name: Faker::Name.name,
     size: Faker::Number.decimal_part(digits: 2),
     equipment: Faker::Appliance.equipment,
-    location: Faker::Nation.capital_city,
+    address: Faker::Nation.capital_city,
     description: Faker::Lorem.paragraph(sentence_count: 4),
     price: Faker::Number.decimal(l_digits: 2)
   )
