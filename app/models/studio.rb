@@ -6,13 +6,13 @@ class Studio < ApplicationRecord
   include AlgoliaSearch
 
   algoliasearch do
-    attributes :name, :location, :size
-    searchableAttributes ['name', 'location', 'size']
+    attributes :name, :address, :size
+    searchableAttributes ['name', 'address', 'size']
   end
 
   include PgSearch::Model
-  pg_search_scope :search_by_name_and_location,
-    against: [ :name, :location ],
+  pg_search_scope :search_by_name_and_address,
+    against: [ :name, :address ],
     using: {
       tsearch: { prefix: true }
     }

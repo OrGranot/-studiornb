@@ -1,7 +1,7 @@
 class StudiosController < ApplicationController
   def index
     if params[:query].present?
-      sql_query = "name ILIKE :query OR location ILIKE :query"
+      sql_query = "name ILIKE :query OR address ILIKE :query"
       @studios = Studio.where(sql_query, query: "%#{params[:query]}%")
     else
       @studios = Studio.all
@@ -46,6 +46,6 @@ class StudiosController < ApplicationController
   private
 
   def studio_params
-    params.require(:studio).permit(:name, :size, :equipment, :location, :description, :photo, :price)
+    params.require(:studio).permit(:name, :size, :equipment, :address, :description, :photo, :price)
   end
 end
