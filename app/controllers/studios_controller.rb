@@ -1,6 +1,13 @@
 class StudiosController < ApplicationController
   def index
     @studios = Studio.all
+
+    @markers = @studios.geocoded.map do |studio|
+      {
+        lat: studio.latitude,
+        lng: studio.longitude
+      }
+    end
   end
 
   def new
